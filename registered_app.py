@@ -10,13 +10,37 @@ from PIL import Image
 from streamlit_option_menu import option_menu
 from sklearn.feature_selection import SelectKBest, f_regression
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
+import gdown
+import os
+
+def download_model(file_id, output_path):
+    # Construct the gdown URL
+    url = f'https://drive.google.com/uc?id={file_id}'
+    
+    # Download the file
+    gdown.download(url, output_path, quiet=False)
+
+# The ID of your file on Google Drive (just the ID, not the full URL)
+FILE_ID = '14HiZY90SaZ9ytwND1mmOLRM2wJPS6d8P' 
+
+# Check if the file does not already exist to avoid re-downloading it
+if not os.path.exists('model_casual_final.pkl'):
+    # Call the download function with the actual FILE_ID and the desired output path
+    download_model(FILE_ID, 'model_casual_final.pkl')
+
+# Now the model file should be in your local directory and can be loaded
+with open('model_casual_final.pkl', 'rb') as ft_file:
+    model_dem = pickle.load(ft_file)
+
+
+#https://drive.google.com/file/d/14HiZY90SaZ9ytwND1mmOLRM2wJPS6d8P/view?usp=sharing
 
 def registered_app():
     st.header('Prediction for Registered Users')
     st.markdown('---')
     text = 'This  is a specialized module designed to predict the demand for registered users'
     st.markdown(f'<p style="text-align: justify;">{text}</p>', unsafe_allow_html=True)
-    model_dem = joblib.load('model_reg_final.pkl')
+    #model_dem = joblib.load('model_reg_final.pkl')
     temp = st.slider('Temperature at time of prediction', min_value=0, max_value=50, value=4, step=1)
     hum = st.slider('Humidity at time of prediction', min_value=0, max_value=100, value=40, step=1)
     MovingAvg_Reg = st.number_input('What is the moving average demand of registered users?')

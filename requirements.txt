@@ -1,7 +1,8 @@
-pandas
+streamlit == 1.26.0
+pandas == 2.1.0
 scikit-learn
+xgboost
 streamlit
-xbgoost
 joblib
 datanalysis
 seaborn

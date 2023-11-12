@@ -9,5 +9,3 @@ matplotlib
 plotly.express
 statsmodels
 numpy
-PIL
-streamlit_option_menu 

@@ -8,7 +8,6 @@ seaborn
 matplotlib
 plotly.express
 statsmodels
-io
 numpy
 PIL
 streamlit_option_menu 

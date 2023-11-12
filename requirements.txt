@@ -5,7 +5,7 @@ xgboost
 streamlit
 joblib
 seaborn
-matplotlib.pyplot
+matplotlib
 plotly.express
 statsmodels.graphics.tsaplots
 io

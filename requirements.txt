@@ -4,7 +4,6 @@ scikit-learn
 xgboost
 streamlit
 joblib
-datanalysis
 seaborn
 matplotlib.pyplot
 plotly.express

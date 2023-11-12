@@ -10,3 +10,5 @@ plotly.express
 statsmodels
 numpy
 streamlit_option_menu
+gdown
+os

@@ -1,0 +1,14 @@
+pandas
+scikit-learn
+streamlit
+xbgoost
+joblib
+datanalysis
+seaborn
+matplotlib.pyplot
+plotly.express
+statsmodels.graphics.tsaplots
+io
+numpy
+PIL
+streamlit_option_menu 
